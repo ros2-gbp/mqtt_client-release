@@ -21,7 +21,7 @@ tracks:
     name: mqtt_client
     patches: null
     release_inc: '1'
-    release_repo_url: git@github.com:ika-rwth-aachen/mqtt_client-release.git
+    release_repo_url: null
     release_tag: v:{version}
     ros_distro: humble
     vcs_type: git
@@ -48,7 +48,7 @@ tracks:
     name: mqtt_client
     patches: null
     release_inc: '1'
-    release_repo_url: git@github.com:ika-rwth-aachen/mqtt_client-release.git
+    release_repo_url: null
     release_tag: v:{version}
     ros_distro: iron
     vcs_type: git
@@ -102,7 +102,7 @@ tracks:
     name: mqtt_client
     patches: null
     release_inc: '1'
-    release_repo_url: git@github.com:ika-rwth-aachen/mqtt_client-release.git
+    release_repo_url: null
     release_tag: v:{version}
     ros_distro: rolling
     vcs_type: git
