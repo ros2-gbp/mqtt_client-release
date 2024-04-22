@@ -1,3 +1,28 @@
+## mqtt_client (jazzy) - 2.2.1-1
+
+The packages in the `mqtt_client` repository were released into the `jazzy` distro by running `/usr/local/google/home/marcogg/migration/bin/bloom-release mqtt_client --rosdistro jazzy` on `Mon, 22 Apr 2024 10:50:00 -0000`
+
+These packages were released:
+- `mqtt_client`
+- `mqtt_client_interfaces`
+
+Version of package(s) in repository `mqtt_client`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/mqtt_client.git
+- release repository: https://github.com/ros2-gbp/mqtt_client-release.git
+- rosdistro version: `null`
+- old version: `null`
+- new version: `2.2.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## mqtt_client (humble) - 2.2.1-1
 
 The packages in the `mqtt_client` repository were released into the `humble` distro by running `/usr/local/bin/bloom-release --rosdistro humble --track humble --edit mqtt_client` on `Tue, 19 Mar 2024 00:07:07 -0000`
