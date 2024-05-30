@@ -1,0 +1,12 @@
+Source: ros-jazzy-mqtt-client
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, libpaho-mqtt-dev, libpaho-mqttpp-dev, ros-jazzy-ament-cmake, ros-jazzy-mqtt-client-interfaces, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rcpputils, ros-jazzy-ros-environment, ros-jazzy-std-msgs, ros-jazzy-ros-workspace
+Homepage: http://wiki.ros.org/mqtt_client
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-mqtt-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, libpaho-mqtt-dev, libpaho-mqttpp-dev, ros-jazzy-mqtt-client-interfaces, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rcpputils, ros-jazzy-ros-environment, ros-jazzy-std-msgs, ros-jazzy-ros-workspace
+Description: Node that enables connected ROS-based devices or robots to exchange ROS messages via an MQTT broker using the MQTT protocol.
