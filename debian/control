@@ -1,0 +1,12 @@
+Source: ros-jazzy-mqtt-client-interfaces
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), ros-jazzy-ament-cmake, ros-jazzy-rosidl-default-generators, ros-jazzy-std-msgs, ros-jazzy-ros-workspace, ros-jazzy-rosidl-typesupport-fastrtps-c, ros-jazzy-rosidl-typesupport-fastrtps-cpp
+Homepage: http://wiki.ros.org/mqtt_client
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-mqtt-client-interfaces
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-rosidl-default-runtime, ros-jazzy-std-msgs, ros-jazzy-ros-workspace
+Description: Message and service definitions for mqtt_client
