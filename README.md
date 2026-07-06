@@ -1,3 +1,28 @@
+## mqtt_client (rolling) - 2.4.2-1
+
+The packages in the `mqtt_client` repository were released into the `rolling` distro by running `/usr/local/bin/bloom-release --rosdistro rolling --track rolling mqtt_client --override-release-repository-push-url git@github.com:ros2-gbp/mqtt_client-release.git` on `Mon, 06 Jul 2026 21:47:39 -0000`
+
+These packages were released:
+- `mqtt_client`
+- `mqtt_client_interfaces`
+
+Version of package(s) in repository `mqtt_client`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/mqtt_client.git
+- release repository: https://github.com/ros2-gbp/mqtt_client-release.git
+- rosdistro version: `2.4.1-3`
+- old version: `2.4.1-3`
+- new version: `2.4.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.13.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.25.1`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## mqtt_client (lyrical) - 2.4.2-1
 
 The packages in the `mqtt_client` repository were released into the `lyrical` distro by running `/usr/local/bin/bloom-release --rosdistro lyrical --track lyrical mqtt_client --override-release-repository-push-url git@github.com:ros2-gbp/mqtt_client-release.git` on `Mon, 06 Jul 2026 21:46:19 -0000`
