@@ -1,1 +1,1 @@
-{"base": "a8e48be7e69a", "parent": "debian/rolling/mqtt_client", "previous": "666c2331e9db", "trim": "", "trimbase": ""}
+{"base": "a01332a", "parent": "debian/rolling/mqtt_client", "previous": "e9346b7", "trim": "", "trimbase": ""}
