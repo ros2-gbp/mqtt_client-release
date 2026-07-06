@@ -48,6 +48,7 @@ SOFTWARE.
 #include <std_msgs/msg/u_int32.hpp>
 #include <std_msgs/msg/u_int64.hpp>
 #include <std_msgs/msg/u_int8.hpp>
+#include <std_msgs/msg/u_int8_multi_array.hpp>
 
 #include <rclcpp_components/register_node_macro.hpp>
 RCLCPP_COMPONENTS_REGISTER_NODE(mqtt_client::MqttClient)
@@ -165,6 +166,12 @@ bool fixedMqtt2PrimitiveRos(mqtt::const_message_ptr mqtt_msg,
       msg.data = mqtt2float<double>(mqtt_msg);
 
       serializeRosMessage(msg, serialized_msg);
+    } else if (msg_type == "std_msgs/msg/UInt8MultiArray") {
+      std_msgs::msg::UInt8MultiArray msg;
+      const std::string& str_msg = mqtt_msg->to_string();
+      msg.data = std::vector<uint8_t>(str_msg.begin(), str_msg.end());
+      
+      serializeRosMessage(msg, serialized_msg);
     } else {
       throw std::domain_error("Unhandled message type (" + msg_type + ")");
     }
@@ -251,6 +258,10 @@ bool primitiveRosMessageToString(
     std_msgs::msg::Float64 msg;
     deserializeRosMessage(*serialized_msg, msg);
     primitive = std::to_string(msg.data);
+  } else if (msg_type == "std_msgs/msg/UInt8MultiArray") {
+    std_msgs::msg::UInt8MultiArray msg;
+    deserializeRosMessage(*serialized_msg, msg);
+    primitive = std::string(msg.data.begin(), msg.data.end());
   } else {
     found_primitive = false;
   }
@@ -654,6 +665,11 @@ void MqttClient::setup() {
   // initialize MQTT client
   setupClient();
 
+  // create ROS publishers BEFORE connect() so the Paho callback thread
+  // does not fire message_arrived against half-constructed publishers.
+  // See https://github.com/ika-rwth-aachen/mqtt_client (v2.4.1) startup race.
+  setupPublishers();
+
   // connect to MQTT broker
   connect();
 
@@ -677,8 +693,6 @@ void MqttClient::setup() {
   check_subscriptions_timer_ =
     create_wall_timer(std::chrono::duration<double>(1.0),
                       std::bind(&MqttClient::setupSubscriptions, this));
-
-  setupPublishers ();
 }
 
 std::optional<rclcpp::QoS> MqttClient::getCompatibleQoS (const std::string &ros_topic, const rclcpp::TopicEndpointInfo &tei,
@@ -1304,7 +1318,6 @@ void MqttClient::connection_lost(const std::string& cause) {
   RCLCPP_ERROR(get_logger(),
                "Connection to broker lost, will try to reconnect...");
   is_connected_ = false;
-  connect();
 }
 
 
@@ -1520,3 +1533,4 @@ void MqttClient::on_failure(const mqtt::token& token) {
 }
 
 }  // namespace mqtt_client
+
