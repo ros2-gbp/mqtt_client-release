@@ -1,3 +1,28 @@
+## mqtt_client (kilted) - 2.5.0-1
+
+The packages in the `mqtt_client` repository were released into the `kilted` distro by running `/usr/local/bin/bloom-release --rosdistro kilted --track kilted mqtt_client --override-release-repository-push-url git@github.com:ros2-gbp/mqtt_client-release.git` on `Wed, 22 Jul 2026 06:05:27 -0000`
+
+These packages were released:
+- `mqtt_client`
+- `mqtt_client_interfaces`
+
+Version of package(s) in repository `mqtt_client`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/mqtt_client.git
+- release repository: https://github.com/ros2-gbp/mqtt_client-release.git
+- rosdistro version: `2.4.2-1`
+- old version: `2.4.2-1`
+- new version: `2.5.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## mqtt_client (jazzy) - 2.5.0-1
 
 The packages in the `mqtt_client` repository were released into the `jazzy` distro by running `/usr/local/bin/bloom-release --rosdistro jazzy --track jazzy mqtt_client --override-release-repository-push-url git@github.com:ros2-gbp/mqtt_client-release.git` on `Wed, 22 Jul 2026 06:04:39 -0000`
